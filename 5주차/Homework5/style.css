@@ -2,11 +2,10 @@ h2{
   text-transform:capitalize;
 }
 
-
-#header{
-  background-color:black;
+.back1{
   background:url(back1.png);
 }
+
 
 #websites{
   background:url(back3.jpg);
