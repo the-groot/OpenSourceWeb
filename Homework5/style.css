@@ -1,0 +1,26 @@
+h2{
+  text-transform:capitalize;
+}
+
+.back1{
+  background:url(img/back1.png);
+}
+
+
+#websites{
+  background:url(img/back3.jpg);
+  background-size:100% 100%;
+}
+
+a{
+  color:white;
+  text-decoration:none;
+}
+
+ol{
+  list-style-type:upper-roman;
+  font-family: 'Rock Salt',cursive;
+  font-style:italic;
+  font-size:20px;
+  font-weight:bold;
+}
