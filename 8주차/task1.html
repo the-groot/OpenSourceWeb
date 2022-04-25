@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>The Document Object</h1>
+    <h2>The querySelectorAll() Method</h2>
+    <p>Add a background color all elements with class="example":</p>
+    <h2 class="example">A heading</h2>
+    <p class="example">A paragraph</p>
+
+    <script>
+      var tag1=document.getElementsByTagName("h2");
+      tag1[0].style.backgroundColor="blue";
+
+      var tag2=document.getElementsByClassName("example");
+      for(var i=0; i<tag2.length; i++){
+        tag2[i].style.backgroundColor="yellow";
+      }
+
+
+    </script>
+  </body>
+</html>

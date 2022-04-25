@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    Input:
+    <input type="" id="input"name="" value="">
+    <input type="button" id="stack" value="stack" onclick="store()">
+    <br>
+    <input type="button" id="show" value="show" onclick="show()">
+
+<script type="text/javascript">
+  var arr=new Array();
+  var i=0;
+  function store(){
+    arr[i]=document.getElementById("input").value;
+    i++;
+  }
+  function show(){
+    for(var j=0; j<arr.length; j++){
+      document.write(arr[j]+"</br>");
+    }
+  }
+</script>
+
+  </body>
+</html>

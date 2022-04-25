@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2>Simple Calculator</h2>
+    First integer: <input type="text" id="first" value=""><br>
+    Second integer: <input type="text" id="second" value=""><br>
+    Total: <input type="text" id="total" value=""><br>
+    <input type="button" value="calculate" id="calculate" onclick="Result();">
+
+
+<script type="text/javascript">
+  function Result() {
+    var first=document.getElementById("first").value;
+    first=parseInt(first);
+    var second=document.getElementById("second").value;
+    second=parseInt(second);
+    var total=document.getElementById("total");
+    total.value=first+second;
+  }
+</script>
+
+  </body>
+</html>

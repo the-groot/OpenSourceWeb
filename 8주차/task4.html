@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="button" name="" value="change" onclick="Onchange();">
+    <br>
+    <img class="table_image" src="test1.jpg" alt="">
+    <img class="table_image" src="test2.jpg" alt="">
+    <img class="table_image" src="test3.jpg" alt="">
+    <img class="table_image" src="test4.jpg" alt="">
+
+    <script type="text/javascript">
+      function Onchange() {
+        var hello=document.getElementsByClassName("table_image");
+        hello[2].src="test5.jpg";
+        hello[3].src="test5.jpg";
+      }
+    </script>
+  </body>
+</html>

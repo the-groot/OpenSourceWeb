@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style media="screen">
+    table{
+      border-collapse:collapse;
+    }
+  </style>
+  <body>
+
+    <table border="1">
+
+    <tr class="row" onmouseover="Mover(this);" onmouseout="Mout(this);">
+
+      <script>
+        for(var i=0; i<5; i++){
+          document.write("<th> hi</th>")
+        }
+        </script>
+
+    </tr>
+    <tr class="row" onmouseover="Mover(this);" onmouseout="Mout(this);">
+      <td>Spring thunderclouds</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+    <tr class="row" onmouseover="Mover(this);" onmouseout="Mout(this);">
+      <td>Roasting chestnuts</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr class="row" onmouseover="Mover(this);" onmouseout="Mout(this);">
+      <td>Winter snowbanks</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr class="row" onmouseover="Mover(this);" onmouseout="Mout(this);">
+      <td>Ice cream on a hot summer day</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+
+    </table>
+
+
+    <script type="text/javascript">
+      function Mover(obj){
+        obj.style.backgroundColor="blue";
+      }
+      function Mout(obj){
+        obj.style.backgroundColor="white";
+      }
+    </script>
+
+  </body>
+</html>
