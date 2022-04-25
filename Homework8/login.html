@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+
+    <style media="screen">
+
+      h1{
+        font-size:50px;
+        padding:50px;
+        margin-top:60px;
+      }
+
+      form{
+        padding:20px;
+        padding-top:40px;
+      }
+
+      .contents{
+           height:750px;
+           background-repeat:no-repeat;
+           background-image:url('login.jpg');
+           background-size:cover;
+      }
+      .left{
+        float:left;
+      }
+      .right{
+        float:right;
+      }
+
+      #login{
+        width:170px;
+        margin-top:20px;
+        background-color:	#3CA03C;
+        border-radius:0px;
+      }
+    </style>
+
+
+  </head>
+  <body>
+
+    <div class="contents">
+      <div class="left">
+        <h1>Happy <br>Shopping</h1>
+      </div>
+
+      <div class="right">
+
+        <form class="login" action="index.html" method="post">
+          ID<br>
+          <input type="text" id="id" name="" value=""> <br>
+          PW <br>
+          <input type="password" id="pw" name="" value=""> <br>
+          <input type="button" id="login" name="" value="Login" onclick="Login();">
+
+        </form>
+
+      </div>
+
+
+    </div>
+
+    <script media="screen">
+      function Login(){
+        var id=document.getElementById("id").value;
+        var pw=document.getElementById("pw").value;
+        if(id==="abcd" && pw==="1234"){
+          alert("Login Success!");
+          document.location.href="main.html";
+        }
+        else{
+          alert("Login Failed!")
+        }
+      }
+    </script>
+
+  </body>
+</html>
