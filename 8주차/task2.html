@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>The Document Object</h1>
+    <h2>Dom innerHTML Property</h2>
+    <p id="p1">Javascript DOM is fun to learn</p>
+    <input type="button" name="" value="Try it" onclick="Change();">
+    <p id="p2"></p>
+
+<script type="text/javascript">
+function Change(){
+  var tag=document.getElementById("p1").innerHTML;
+  var tag2=document.getElementById("p2");
+  tag2.innerHTML="<h2>"+tag+"</h2>";
+  tag2.style.color="green";
+}
+</script>
+  </body>
+</html>
