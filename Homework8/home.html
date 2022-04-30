@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+
+    <style media="screen">
+
+      a{
+        text-decoration:none;
+      }
+
+      a:visited{
+        color:white;
+      }
+
+      h2{
+        font-weight:500;
+        color:white;
+      }
+      hr{
+        border:1px dotted red;
+      }
+
+      ul{
+        list-style:none;
+        text-align:center;
+      }
+      li{
+        display:inline-block;
+        padding-right:50px;
+        font-weight:600;
+      }
+      li:hover{
+        color:red;
+      }
+
+
+      .image{
+        height:750px;
+        background-image:url('main.jpg');
+        background-repeat:no-repeat;
+        background-size:cover;
+      }
+
+      .right{
+        float:right;
+        margin-right:160px;
+      }
+      .left{
+        margin-left:80px;
+        float:left;
+      }
+
+
+      .elevator{
+        position: fixed;
+        right: 50%;
+        top: 600px;
+        margin-right: -720px;
+        text-align:center;
+        width: 80px;
+        background-color:skyblue;
+        color:red;
+        padding-top:10px;
+        padding-bottom:10px;
+      }
+      .elevator a:visited{
+        color:red;
+      }
+
+      .BESTFRUIT{
+        margin-left:350px;
+        float:left;
+        width:55%;
+      }
+
+
+      .wrapper{
+          display:inline-block;
+          margin-bottom:10px;
+      }
+
+      .box{
+        border:1px solid black;
+      }
+
+      .fruitimage{
+        background-repeat:no-repeat;
+        background-size:contain;
+        width:150px;
+        height:170px;
+        padding:20px;
+      }
+
+      .description, .price{
+        text-align:center;
+        padding-top:10px;
+        padding-bottom:10px;
+      }
+
+      #buy{
+        width:100%;
+        background-color:skyblue;
+      }
+
+      .hidden{
+        display:none;
+      }
+      footer{
+        clear:both;
+        background-color:#50C785;
+        text-align:center;
+        padding:10px;
+
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header" id="top">
+      <div class="image">
+        <div class="menu">
+          <div class="left">
+            <h2>Happy Shopping</h2>
+          </div>
+          <div class="right">
+            <h2><a href="login.html">Logout</a></h2>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="container">
+
+
+    <div class="category">
+      <hr>
+      <ul>
+        <li>BEST</li>
+        <li>FRUIT</li>
+        <li>VEGETABLE</li>
+        <li>DIARY</li>
+        <li>CLOTH</li>
+        <li>ELECTRONIC</li>
+        <li>BOOK</li>
+      </ul>
+      <hr>
+
+
+
+    </div>
+
+    <script type="text/javascript">
+
+    var fruitlist=['NULL','Apple', 'Banana', 'Orange', 'Watermelon', 'Kiwi', 'Strawberry',
+  'Peach', 'Grape','Mango','Blueberry','Pineapple','Cherry',
+'Pear', 'Papaya', 'Lemon', 'Melon'];
+    var pricelist=[0,5,6,4,10,5,7,1,2,3,4,5,6,7,8,9,10];
+    var selectlist=new Array(17);
+    for (var k=0; k<selectlist.length; k++){
+      selectlist[k]="false";
+    }
+      function Mover(obj){
+        obj.style.border="1px solid red";
+      }
+      function Mout(obj){
+        obj.style.border="1px solid black";
+      }
+      function Select(obj){
+
+        var every = obj.childNodes;
+        var index=every[7].innerHTML;
+        if(selectlist[index]=="false"){
+        every[3].style.backgroundColor="red";   //why 3??
+        every[5].style.backgroundColor="red";
+        selectlist[index]="true";
+        every[1].style.backgroundImage="url(selected.jpg)";
+      }
+      else{
+        every[3].style.backgroundColor="white";   //why 3??
+        every[5].style.backgroundColor="white";
+        selectlist[index]="false";
+        every[1].style.backgroundImage=`url(${index}.jpg)`;
+      }
+      }
+      function Buy(){
+        var total=0;
+        var tempfruitlist=new Array();
+        var tempcount=0;
+        for(var j=0; j<selectlist.length; j++){
+          if(selectlist[j]=="true"){
+            total+=parseInt(pricelist[j]);
+            tempfruitlist[tempcount]=fruitlist[j];
+            tempcount++;
+          }
+        }
+        if(tempfruitlist.length==0){
+          alert("Please select items");
+        }
+        else{
+        alert(tempfruitlist+" is[are] selected"+"\n"+"Total: "+total+"$");
+      }
+      }
+    </script>
+
+
+    <div class="BESTFRUIT">
+      <br>
+      <h3>BEST FRUIT</h3>
+      <div class="grid-container">
+        <div class="wrapper">
+          <caption>1</caption>
+  <div class="box" onmouseover="Mover(this);" onmouseout="Mout(this);" onclick="Select(this);">
+    <div class="fruitimage" style="background-image:url(1.jpg)"></div>
+     <div class="description">Apple</div>
+     <div class="price" width="10px";>5 $ </div>
+     <p class="hidden">1</p>
+     </div>
+   </div>
+
+
+   <div class="wrapper">
+     <caption>2</caption>
+   <div class="box" onmouseover="Mover(this);" onmouseout="Mout(this);" onclick="Select(this);">
+     <div class="fruitimage" style="background-image:url(2.jpg)"></div>
+      <div class="description">Banana</div>
+      <div class="price">6 $ </div>
+         <p class="hidden">2</p>
+    </div>
+    </div>
+
+
+    <div class="wrapper">
+      <caption>3</caption>
+    <div class="box" onmouseover="Mover(this);" onmouseout="Mout(this);" onclick="Select(this);">
+      <div class="fruitimage" style="background-image:url(3.jpg)"></div>
+       <div class="description">Orange</div>
+       <div class="price">4 $ </div>
+       <p class="hidden">3</p>
+     </div>
+     </div>
+
+
+     <div class="wrapper">
+       <caption>4</caption>
+     <div class="box" onmouseover="Mover(this);" onmouseout="Mout(this);" onclick="Select(this);">
+       <div class="fruitimage" style="background-image:url(4.jpg)"></div>
+        <div class="description">Watermelon</div>
+        <div class="price">10 $ </div>
+        <p class="hidden">4</p>
+      </div>
+      </div>
+
+      <div class="wrapper">
+        <caption>5</caption>
+      <div class="box" onmouseover="Mover(this);" onmouseout="Mout(this);" onclick="Select(this);">
+        <div class="fruitimage" style="background-image:url(5.jpg)"></div>
+         <div class="description">Kiwi</div>
+         <div class="price">5 $ </div>
+         <p class="hidden">5</p>
+       </div>
+       </div>
+
+       <div class="wrapper">
+         <caption>6</caption>
+       <div class="box" onmouseover="Mover(this);" onmouseout="Mout(this);" onclick="Select(this);">
+         <div class="fruitimage" style="background-image:url(6.jpg)"></div>
+          <div class="description">Strawberry</div>
+          <div class="price">7 $ </div>
+          <p class="hidden">6</p>
+        </div>
+        </div>
+
+        <div class="wrapper">
+          <caption>7</caption>
+        <div class="box" onmouseover="Mover(this);" onmouseout="Mout(this);" onclick="Select(this);">
+          <div class="fruitimage" style="background-image:url(7.jpg)"></div>
+           <div class="description">Peach</div>
+           <div class="price">1 $ </div>
+           <p class="hidden">7</p>
+         </div>
+         </div>
+
+         <div class="wrapper">
+           <caption>8</caption>
+         <div class="box" onmouseover="Mover(this);" onmouseout="Mout(this);" onclick="Select(this);">
+           <div class="fruitimage" style="background-image:url(8.jpg)"></div>
+            <div class="description">Grape</div>
+            <div class="price">2 $ </div>
+            <p class="hidden">8</p>
+          </div>
+          </div>
+
+          <div class="wrapper">
+            <caption>9</caption>
+          <div class="box" onmouseover="Mover(this);" onmouseout="Mout(this);" onclick="Select(this);">
+            <div class="fruitimage" style="background-image:url(9.jpg)"></div>
+             <div class="description">Mango</div>
+             <div class="price">3 $ </div>
+             <p class="hidden">9</p>
+           </div>
+           </div>
+
+           <div class="wrapper">
+             <caption>10</caption>
+           <div class="box" onmouseover="Mover(this);" onmouseout="Mout(this);" onclick="Select(this);">
+             <div class="fruitimage" style="background-image:url(10.jpg)"></div>
+              <div class="description">Blueberry</div>
+              <div class="price">4 $ </div>
+              <p class="hidden">10</p>
+            </div>
+            </div>
+
+            <div class="wrapper">
+              <caption>11</caption>
+            <div class="box" onmouseover="Mover(this);" onmouseout="Mout(this);" onclick="Select(this);">
+              <div class="fruitimage" style="background-image:url(11.jpg)"></div>
+               <div class="description">Pineapple</div>
+               <div class="price">5 $ </div>
+               <p class="hidden">11</p>
+             </div>
+             </div>
+
+             <div class="wrapper">
+               <caption>12</caption>
+             <div class="box" onmouseover="Mover(this);" onmouseout="Mout(this);" onclick="Select(this);">
+               <div class="fruitimage" style="background-image:url(12.jpg)"></div>
+                <div class="description">Cherry</div>
+                <div class="price">6 $ </div>
+                <p class="hidden">12</p>
+              </div>
+              </div>
+
+              <div class="wrapper">
+                <caption>13</caption>
+              <div class="box" onmouseover="Mover(this);" onmouseout="Mout(this);" onclick="Select(this);">
+                <div class="fruitimage" style="background-image:url(13.jpg)"></div>
+                 <div class="description">Pear</div>
+                 <div class="price">7 $ </div>
+                 <p class="hidden">13</p>
+               </div>
+               </div>
+
+               <div class="wrapper">
+                 <caption>14</caption>
+               <div class="box" onmouseover="Mover(this);" onmouseout="Mout(this);" onclick="Select(this);">
+                 <div class="fruitimage" style="background-image:url(14.jpg)"></div>
+                  <div class="description">Papaya</div>
+                  <div class="price">8 $ </div>
+                  <p class="hidden">14</p>
+                </div>
+                </div>
+
+                <div class="wrapper">
+                  <caption>15</caption>
+                <div class="box" onmouseover="Mover(this);" onmouseout="Mout(this);" onclick="Select(this);">
+                  <div class="fruitimage" style="background-image:url(15.jpg)"></div>
+                   <div class="description">Lemon</div>
+                   <div class="price">9 $ </div>
+                   <p class="hidden">15</p>
+                 </div>
+                 </div>
+
+                 <div class="wrapper">
+                   <caption>16</caption>
+                 <div class="box" onmouseover="Mover(this);" onmouseout="Mout(this);" onclick="Select(this);">
+                   <div class="fruitimage" style="background-image:url(16.jpg)"></div>
+                    <div class="description">Melon</div>
+                    <div class="price">10 $ </div>
+                    <p class="hidden">16</p>
+                  </div>
+                  </div>
+
+
+        </div>
+        <input type="button" onclick="Buy();" value="BUY" id="buy">
+    </div>
+
+
+
+
+
+
+    </div>
+
+
+
+    <div class="elevator">
+        <a href="#top">TOP</a><hr style="border: 1px solid white">
+        <a href="#bottom">BOTTOM</a>
+    </div>
+
+
+    <footer id="bottom">
+      This is WebProgramming Homework
+    </footer>
+  </body>
+</html>

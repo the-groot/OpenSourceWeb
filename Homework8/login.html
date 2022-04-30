@@ -51,9 +51,9 @@
 
         <form class="login" action="index.html" method="post">
           ID<br>
-          <input type="text" id="id" name="" value=""> <br>
+          <input type="text" id="id" name="" value="" placeholder="abcd"> <br>
           PW <br>
-          <input type="password" id="pw" name="" value=""> <br>
+          <input type="password" id="pw" name="" value="" placeholder="1234"> <br>
           <input type="button" id="login" name="" value="Login" onclick="Login();">
 
         </form>
@@ -69,7 +69,7 @@
         var pw=document.getElementById("pw").value;
         if(id==="abcd" && pw==="1234"){
           alert("Login Success!");
-          document.location.href="main.html";
+          document.location.href="home.html";
         }
         else{
           alert("Login Failed!")
