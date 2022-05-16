@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<h2>My Jeju island tour</h2>
+<div id="map" style="width:800px; height: 500px"></div>
+
+<script>
+function myMap() {
+  var mapCanvas = document.getElementById("map");
+  var myCenter = new google.maps.LatLng(31.4027, 126.5043);
+  var mapOptions = {
+  	center: myCenter,
+    zoom: 10
+  };
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+
+  var markers = [
+
+    new google.maps.LatLng(33.50772558689397, 126.49612957124785),
+    new google.maps.LatLng(33.54428764, 126.6742283),
+    new google.maps.LatLng(33.53003550708141,126.85689598838275),
+    new google.maps.LatLng(33.464408896039, 126.83662596157),
+    new google.maps.LatLng(33.511873648167,126.96426232053),
+    new google.maps.LatLng(33.252878636728,126.62261745319),
+    new google.maps.LatLng(33.36718047554837,126.35850196952943),
+    new google.maps.LatLng(33.479227632876,126.35988888059),
+
+
+
+
+
+  ];
+
+  var days=["Day1","Day1","Day1","Day1",
+  "Day2","Day3","Day3","Day3","Day3"];
+
+  var info=[
+  "제주 공항",
+  "서우봉",
+  "세화 해변",
+  "용눈이 오름",
+  "우도",
+  "쇠소깍",
+  "새별 오름",
+  "애월 해안 도로"
+
+
+
+]
+
+
+  var marker, i, circles, infowindow;
+
+  for(i = 0; i < markers.length; i++){
+	marker = new google.maps.Marker({
+		position: markers[i],
+		map: map
+	  });
+
+    infowindow = new google.maps.InfoWindow({
+		content:
+    "<h3>"+days[i]+"</h3>"+
+		"<p>" +info[i] +  "</p>"
+	});
+	infowindow.open(map,marker);
+
+
+  var myPath = new google.maps.Polyline({
+    path: [markers[i], markers[i+1]],
+    strokeColor: "#0000FF",
+    strokeOpacity: 0.8,
+    strokeWeight: 2
+  });
+  myPath.setMap(map);
+
+
+}
+
+
+
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+
+</body>
+</html>
